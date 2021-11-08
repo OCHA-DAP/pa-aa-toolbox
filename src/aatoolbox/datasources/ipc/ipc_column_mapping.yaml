@@ -1,0 +1,54 @@
+# IPC's excel column names are mostly unreadable, so mapping
+# to create more logical column names
+# Analysis name, Country Population, % of total county Pop
+# are not being used in our current analysis so not mapping them
+Country: ADMIN0
+Level 1 Name: ADMIN1
+Area: AREA
+Area ID: AREA_ID
+Date of Analysis: date
+"#": reported_pop_CS
+Area Phase: CS_phase
+Analysis Period: CS_val
+"#.1": CS_1
+"%": CS_1_perc
+"#.2": CS_2
+"%.1": CS_2_perc
+"#.3": CS_3
+"%.2": CS_3_perc
+"#.4": CS_4
+"%.3": CS_4_perc
+"#.5": CS_5
+"%.4": CS_5_perc
+"#.6": CS_3p
+"%.5": CS_3p_perc
+"#.7": reported_pop_ML1
+Area Phase.1: ML1_phase
+Analysis Period.1: ML1_val
+"#.8": ML1_1
+"%.6": ML1_1_perc
+"#.9": ML1_2
+"%.7": ML1_2_perc
+"#.10": ML1_3
+"%.8": ML1_3_perc
+"#.11": ML1_4
+"%.9": ML1_4_perc
+"#.12": ML1_5
+"%.10": ML1_5_perc
+"#.13": ML1_3p
+"%.11": ML1_3p_perc
+"#.14": reported_pop_ML2
+Area Phase.2: ML2_phase
+Analysis Period.2: ML2_val
+"#.15": ML2_1
+"%.12": ML2_1_perc
+"#.16": ML2_2
+"%.13": ML2_2_perc
+"#.17": ML2_3
+"%.14": ML2_3_perc
+"#.18": ML2_4
+"%.15": ML2_4_perc
+"#.19": ML2_5
+"%.16": ML2_5_perc
+"#.20": ML2_3p
+"%.17": ML2_3p_perc

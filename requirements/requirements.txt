@@ -16,6 +16,8 @@ click-plugins==1.1.1
     # via fiona
 cligj==0.7.2
     # via fiona
+et-xmlfile==1.1.0
+    # via openpyxl
 fiona==1.8.20
     # via geopandas
 geopandas==0.10.1
@@ -28,6 +30,8 @@ numpy==1.21.2
     # via
     #   aa-toolbox (setup.cfg)
     #   pandas
+openpyxl==3.0.9
+    # via aa-toolbox (setup.cfg)
 pandas==1.3.3
     # via geopandas
 pydantic==1.8.2
