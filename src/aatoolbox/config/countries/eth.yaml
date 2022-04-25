@@ -5,3 +5,5 @@ codab:
   admin_level_max: 2
 fewsnet:
   region_name: east-africa
+usgs_ndvi:
+  area_name: east-africa

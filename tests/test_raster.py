@@ -83,12 +83,12 @@ def expected_2d():
     """Create expected comped stats for 2d raster."""
     df = pd.DataFrame(
         {
-            "mean_name": {0: 3.0, 1: 4.5},
-            "std_name": {0: 1.5811388300841898, 1: 1.5},
-            "min_name": {0: 1, 1: 3},
-            "max_name": {0: 5, 1: 6},
-            "sum_name": {0: 12.0, 1: 9.0},
-            "count_name": {0: 4, 1: 2},
+            "mean": {0: 3.0, 1: 4.5},
+            "std": {0: 1.5811388300841898, 1: 1.5},
+            "min": {0: 1, 1: 3},
+            "max": {0: 5, 1: 6},
+            "sum": {0: 12.0, 1: 9.0},
+            "count": {0: 4, 1: 2},
             "name": {0: "area_a", 1: "area_b"},
         },
     )
@@ -108,7 +108,7 @@ def test_compute_raster_stats_2d(da_2d, gdf, expected_2d):
     """Compute raster stats without time dimensions."""
     result = da_2d.aat.compute_raster_stats(gdf, "name")
     assert_frame_equal(result, expected_2d, check_dtype=False)
-    expected_2d.insert(loc=6, column="95quant_name", value=[4.85, 5.85])
+    expected_2d.insert(loc=6, column="95quant", value=[4.85, 5.85])
     result_pct = da_2d.aat.compute_raster_stats(
         gdf=gdf, feature_col="name", percentile_list=[95]
     )

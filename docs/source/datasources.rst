@@ -9,6 +9,7 @@ AA Toolbox supports the following data sources:
    datasources/codab
    datasources/fewsnet
    datasources/iri_seasonal_forecast
+   datasources/usgs_ndvi
 
 In general, each data source is available as a class with three methods:
 

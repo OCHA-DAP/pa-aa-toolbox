@@ -82,13 +82,6 @@ class FewsNet(DataSource):
                 f" {self._country_config.iso3}."
             )
 
-        if self._country_config.fewsnet is None:
-            raise AttributeError(
-                "The country configuration file does not contain "
-                "any FEWS NET region name. Please update the config file and "
-                "try again. See the documentation for the valid region names. "
-            )
-
     # mypy will give error Signature of "download" incompatible with supertype
     # "DataSource" due to `pub_year` and `pub_month` not being an arg in
     # `DataSource`. This is however valid so ignore mypy

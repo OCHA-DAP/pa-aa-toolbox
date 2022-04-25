@@ -37,13 +37,6 @@ def test_no_iso2(mock_country_config):
         FewsNet(country_config=mock_country_config)
 
 
-def test_no_fewsnet_config(mock_country_config):
-    """Test AttributeError when no FEWS NET config."""
-    mock_country_config.fewsnet = None
-    with pytest.raises(AttributeError):
-        FewsNet(country_config=mock_country_config)
-
-
 def test_download_country(
     mock_aa_data_dir, mock_country_config, mock_download_call, mocker
 ):

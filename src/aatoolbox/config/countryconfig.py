@@ -1,6 +1,6 @@
 """Country configuration setting base class."""
 from pathlib import Path
-from typing import Dict, Optional, Union
+from typing import Dict, Optional, Tuple, Union
 
 from pydantic import BaseModel, root_validator, validator
 
@@ -81,12 +81,55 @@ class FewsNetConfig(BaseModel):
         return values
 
 
+class UsgsNdviConfig(BaseModel):
+    """USGS NDVI configuration.
+
+    Parameters
+    ----------
+    area_name : str
+        Name of the USGS NDVI coverage area the country belongs to.
+        Needed to download the regional NDVI data.
+    """
+
+    area_name_mapping: Dict[str, Tuple[str, str]] = {
+        "north-africa": ("africa/north", "na"),
+        "east-africa": ("africa/east", "ea"),
+        "southern-africa": ("africa/southern", "sa"),
+        "west-africa": ("africa/west", "wa"),
+        "central-asia": ("asia/centralasia", "cta"),
+        "yemen": ("asia/middleeast/yemen", "yem"),
+        "central-america": ("lac/camcar/centralamerica", "ca"),
+        "hispaniola": ("lac/camcar/caribbean/hispaniola", "hi"),
+    }
+    area_name: str
+
+    @validator("area_name")
+    def area_name_valid(cls, v, values) -> str:
+        """Check that area_name is valid."""
+        valid_area_names = values["area_name_mapping"].keys()
+        if v not in valid_area_names:
+            raise ValueError(
+                f"Invalid area name: {v}. "
+                f"Should be one of {', '.join(valid_area_names)}"
+            )
+        return v
+
+    @root_validator(pre=False, skip_on_failure=True)
+    def _set_area_codes(cls, values) -> dict:
+        """Set NDVI url and prefix from area."""
+        values["area_url"], values["area_prefix"] = values[
+            "area_name_mapping"
+        ][values["area_name"]]
+        return values
+
+
 class CountryConfig(BaseModel):
     """Country configuration."""
 
     iso3: str
     codab: Optional[CodABConfig]
     fewsnet: Optional[FewsNetConfig]
+    usgs_ndvi: Optional[UsgsNdviConfig]
 
     @validator("iso3")
     def _validate_iso3(cls, iso3):

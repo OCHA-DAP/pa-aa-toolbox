@@ -5,3 +5,5 @@ codab:
   admin_level_max: 3
 fewsnet:
   region_name: southern-africa
+usgs_ndvi:
+  area_name: southern-africa

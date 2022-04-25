@@ -8,3 +8,5 @@ codab:
     - cod_admbnda_adm2_rgc_20190911.shp
 fewsnet:
   region_name: southern-africa
+usgs_ndvi:
+  area_name: southern-africa
