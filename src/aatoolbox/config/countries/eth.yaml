@@ -1,7 +1,9 @@
 iso3: eth
 codab:
-  hdx_dataset_name: ETH Administrative Divisions Shapefiles.zip
-  layer_base_name: eth_admbnda_adm{admin_level}_csa_bofed_20201008.shp
-  admin_level_max: 2
+  hdx_dataset_name: eth_adm_csa_bofedb_2021_SHP.zip
+  layer_base_name: eth_admbnda_adm{admin_level}_csa_bofedb_2021.shp
+  admin_level_max: 3
+  custom_layer_names:
+    - eth_admbnda_adm0_csa_bofedb_itos_2021
 fewsnet:
   region_name: east-africa
