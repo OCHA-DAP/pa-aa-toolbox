@@ -30,6 +30,8 @@ certifi==2021.10.8
     #   requests
 cffi==1.15.0
     # via cryptography
+cftime==1.6.0
+    # via aa-toolbox (setup.cfg)
 chardet==4.0.0
     # via frictionless
 charset-normalizer==2.0.12
@@ -149,6 +151,7 @@ numpy==1.22.3
     # via
     #   aa-toolbox (setup.cfg)
     #   bokeh
+    #   cftime
     #   dask
     #   pandas
     #   rasterio

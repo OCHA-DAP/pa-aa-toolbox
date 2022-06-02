@@ -8,6 +8,7 @@ from aatoolbox.config.countryconfig import (
     create_country_config,
     create_custom_country_config,
 )
+from aatoolbox.datasources.chirps.chirps import ChirpsDaily, ChirpsMonthly
 from aatoolbox.datasources.codab.codab import CodAB
 from aatoolbox.datasources.fewsnet.fewsnet import FewsNet
 from aatoolbox.datasources.iri.iri_seasonal_forecast import (
@@ -26,5 +27,7 @@ __all__ = (
     "IriForecastProb",
     "IriForecastDominant",
     "FewsNet",
+    "ChirpsDaily",
+    "ChirpsMonthly",
     "__version__",
 )

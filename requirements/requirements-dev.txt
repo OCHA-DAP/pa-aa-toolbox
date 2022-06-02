@@ -60,6 +60,7 @@ cfgv==3.3.1
 cftime==1.6.0
     # via
     #   -r requirements/requirements-tests.txt
+    #   -r requirements/requirements.txt
     #   netcdf4
 chardet==4.0.0
     # via
